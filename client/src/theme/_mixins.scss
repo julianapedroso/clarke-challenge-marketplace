@@ -1,0 +1,7 @@
+@import "global";
+
+@mixin container {
+  max-width: $container-width;
+  padding: 4rem 0;
+  margin: 0 auto;
+}
