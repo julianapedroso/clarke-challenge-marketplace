@@ -1,0 +1,11 @@
+@import "../../theme/_mixins.scss";
+
+.Navbar {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  @include container;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  height: 100%;
+}
