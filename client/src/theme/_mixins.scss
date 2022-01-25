@@ -5,3 +5,10 @@
   padding: 0 90px;
   margin: 0 auto;
 }
+
+@mixin btn-hover {
+  background-color: $text-color;
+  border: none;
+  color: $secondary-color;
+  transition: ease-in-out 400ms;
+}
