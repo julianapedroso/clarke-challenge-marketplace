@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './styles.scss';
 // Assets
 import Logo from '../../assets/img/clarke-logo.svg';
@@ -35,9 +36,9 @@ const Signin = () => {
             <label>Senha*</label>
           </div>
           <button className="btn__signin">Login</button>
-          <a>
+          <Link to={'/register'}>
             <p>Ainda não tem uma conta?</p>
-          </a>
+          </Link>
         </article>
       </section>
     </section>
