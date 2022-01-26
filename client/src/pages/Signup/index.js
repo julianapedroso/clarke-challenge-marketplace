@@ -5,9 +5,9 @@ import './styles.scss';
 import Logo from '../../assets/img/clarke-logo.svg';
 import Cover from '../../assets/icons/cover-login.svg';
 
-const Register = () => {
+const Signup = () => {
   return (
-    <section className="Register">
+    <section className="Signup">
       <section className="section__cover">
         <article>
           <img src={Cover} alt="Electricity bill" />
@@ -20,11 +20,11 @@ const Register = () => {
           </p>
         </article>
       </section>
-      <section className="section__register">
+      <section className="section__signup">
         <img src={Logo} alt="Logo Clarke" />
         <article>
-          <h2 className="section__register-title">Criar conta</h2>
-          <p className="section__register-description">
+          <h2 className="section__signup-title">Criar conta</h2>
+          <p className="section__signup-description">
             Não possui uma conta? Cadastre-se agora
           </p>
           <div className="label__float">
@@ -32,14 +32,14 @@ const Register = () => {
             <label>Nome*</label>
           </div>
           <div className="label__float">
-            <input type="text" placeholder=" " />
+            <input type="email" placeholder=" " />
             <label>E-mail*</label>
           </div>
           <div className="label__float">
-            <input type="text" placeholder=" " />
+            <input type="password" placeholder=" " />
             <label>Senha*</label>
           </div>
-          <button className="btn__register">Cadastrar</button>
+          <button className="btn__signup">Cadastrar</button>
           <Link to={'/signin'}>
             <p>Já possui uma conta?</p>
           </Link>
@@ -49,4 +49,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default Signup;

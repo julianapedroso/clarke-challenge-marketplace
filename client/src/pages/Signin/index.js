@@ -28,15 +28,15 @@ const Signin = () => {
             Preencha seus dados para entrar
           </p>
           <div className="label__float">
-            <input type="text" placeholder=" " />
+            <input type="email" placeholder=" " />
             <label>E-mail*</label>
           </div>
           <div className="label__float">
-            <input type="text" placeholder=" " />
+            <input type="password" placeholder=" " />
             <label>Senha*</label>
           </div>
           <button className="btn__signin">Login</button>
-          <Link to={'/register'}>
+          <Link to={'/signup'}>
             <p>Ainda não tem uma conta?</p>
           </Link>
         </article>

@@ -1,9 +1,9 @@
 import Home from './Home';
 import Signin from './Signin';
-import Register from './Register';
+import Signup from './Signup';
 
 export { 
   Home, 
   Signin,
-  Register,
+  Signup,
 };
