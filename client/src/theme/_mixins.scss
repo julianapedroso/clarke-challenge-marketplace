@@ -13,9 +13,24 @@
   transition: ease-in-out 400ms;
 }
 
+@mixin input-container {
+  padding: 1rem;
+  border: 1px solid $border-color;
+  border-radius: 5px;
+  margin: .5rem 0;
+}
+
+@mixin input-focus {
+  border: 1px solid $primary-color;
+}
+
 @mixin table-grid {
   display: grid;
   grid-template-columns: repeat(8, 2fr);
   place-content: center;
   column-gap: 3rem;
+}
+
+@mixin bg-linear-gradient {
+  background: linear-gradient(360deg, #000 21.81%, $primary-color 100%);
 }
