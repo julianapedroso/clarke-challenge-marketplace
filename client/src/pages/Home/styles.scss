@@ -22,7 +22,7 @@
       width: 15%;
 
       &:focus {
-        border: 1px solid $primary-color;
+        @include input-focus;
       }
     }
 
