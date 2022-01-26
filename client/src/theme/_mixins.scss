@@ -12,3 +12,10 @@
   color: $secondary-color;
   transition: ease-in-out 400ms;
 }
+
+@mixin table-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 2fr);
+  place-content: center;
+  column-gap: 3rem;
+}
