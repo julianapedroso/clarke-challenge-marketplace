@@ -1,13 +1,12 @@
 import React from 'react';
-import { Navbar } from './components';
-import Home from './pages/Home';
+// Components
+import Routes from './router/routes';
 
 const App = () => {
   return (
-    <div>
-      <Navbar />
-      <Home />
-    </div>
+    <>
+      <Routes />
+    </>
   );
 };
 
