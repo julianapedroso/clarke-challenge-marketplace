@@ -1,13 +1,18 @@
 const Client = require('../models/Client');
+const bcrypt = require('bcrypt');
 
-exports.signup = async (req, res) => {
+exports.signup = async (req, res, next) => {
   const { name, email, password } = req.body;
+
+  // Create password hash
+  const salt = await bcrypt.genSalt(10);
+  const passwordHash = await bcrypt.hash(password, salt);
 
   try {
     const client = await Client.create({
       name,
       email,
-      password,
+      password: passwordHash,
     });
 
     res.status(201).json({
@@ -23,9 +28,8 @@ exports.signup = async (req, res) => {
   }
 };
 
-exports.signin = async (req, res) => {
+exports.signin = async (req, res, next) => {
   // const { email, password } = req.body;
-
   // if (!email || !password) {
   //   res.status(400).json({
   //     success: false,
@@ -33,14 +37,12 @@ exports.signin = async (req, res) => {
   //   });
   //   return;
   // }
-
   // try {
   //   const client = await Client.findOne({ email }).select('+password');
   //   if (!client) {
   //     res.status(404).json({ success: false, error: 'Invalid credentials' });
   //     return;
   //   }
-
   // } catch (error) {
   //   res.status(500).json({
   //     success: false,
