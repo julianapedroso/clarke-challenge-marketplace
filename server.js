@@ -4,12 +4,12 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const app = express();
 
-const PORT = process.env.PORT || 8080;
-
 // Cors
 app.use(cors());
 
 app.use(express.json());
+
+const PORT = process.env.PORT || 8080;
 
 // Auth
 app.use('/api/auth', require('./routes/auth'));
@@ -18,6 +18,7 @@ app.use('/api/auth', require('./routes/auth'));
 const providerRoutes = require('./routes/providers');
 app.use('/', providerRoutes);
 
+// Credentials
 const DB_USER = process.env.DB_USER;
 const DB_PASS = encodeURIComponent(process.env.DB_PASS);
 
