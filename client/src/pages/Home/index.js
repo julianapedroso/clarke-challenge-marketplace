@@ -15,7 +15,7 @@ const Home = () => {
   const getAllProviders = async () => {
     try {
       const response = await api.get('/providers');
-      setProviders(response.data);
+      setProviders(response.data.providers);
     } catch (error) {
       console.log(error);
     }
