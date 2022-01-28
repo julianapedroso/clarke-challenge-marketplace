@@ -1,19 +1,25 @@
 {
-  "name": "node-react",
+  "name": "clarke-challenge-marketplace",
   "version": "1.0.0",
+  "main": "server.js",
   "scripts": {
     "client": "cd client && npm start",
+    "start": "node server.js",
     "server": "nodemon server.js",
     "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
   },
+  "repository": "https://github.com/julianapedroso/clarke-challenge-marketplace.git",
+  "author": "julianapedroso <juliana.cristina@hotmail.com.br>",
+  "license": "MIT",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "cors": "^2.8.5",
-    "dotenv": "^14.3.0",
-    "express": "^4.16.2",
-    "mongoose": "^6.1.8",
-    "nodemon": "^2.0.15"
+    "dotenv": "^14.3.2",
+    "express": "^4.17.2",
+    "mongoose": "^6.1.8"
   },
   "devDependencies": {
-    "concurrently": "^3.5.0"
+    "concurrently": "^7.0.0",
+    "nodemon": "^2.0.15"
   }
 }
