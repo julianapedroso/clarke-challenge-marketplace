@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const Provider = mongoose.model('Provider', {
+const ProviderSchema = new mongoose.Schema({
   id: Number,
   name: String,
   logo: String,
@@ -10,5 +10,7 @@ const Provider = mongoose.model('Provider', {
   totalNumberCustomers: Number,
   averageCustomerRating: Number,
 });
+
+const Provider = mongoose.model('Provider', ProviderSchema);
 
 module.exports = Provider;
