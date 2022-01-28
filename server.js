@@ -4,29 +4,31 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const app = express();
 
-const port = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8080;
 
 // Cors
 app.use(cors());
 
 app.use(express.json());
 
-// API routes
-const providerRoutes = require('./routes/providersRoutes');
-app.use('/providers', providerRoutes);
+// Auth
+app.use('/api/auth', require('./routes/auth'));
 
-// Environment variables
+// Providers
+const providerRoutes = require('./routes/providers');
+app.use('/', providerRoutes);
+
 const DB_USER = process.env.DB_USER;
-const DB_PASSWORD = encodeURIComponent(process.env.DB_PASSWORD);
+const DB_PASS = encodeURIComponent(process.env.DB_PASS);
 
 // Connection with MongoDB
 mongoose
   .connect(
-    `mongodb+srv://${DB_USER}:${DB_PASSWORD}@apicluster.1h6vg.mongodb.net/bancoapi?retryWrites=true&w=majority`
+    `mongodb+srv://${DB_USER}:${DB_PASS}@apicluster.qflpa.mongodb.net/bancoapi?retryWrites=true&w=majority`
   )
   .then(() => {
-    app.listen(port, () => {
-      console.log(`Server listening on port ${port}`);
+    app.listen(PORT, () => {
+      console.log(`Server running on port ${PORT}`);
     });
   })
   .catch((err) => {
