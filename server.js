@@ -11,11 +11,8 @@ app.use(express.json());
 
 const PORT = process.env.PORT || 8080;
 
-// Auth
-app.use('/api/auth', require('./routes/auth'));
-
-// Providers
-const providerRoutes = require('./routes/providers');
+// Routes
+const providerRoutes = require('./routes/routes');
 app.use('/', providerRoutes);
 
 // Credentials
