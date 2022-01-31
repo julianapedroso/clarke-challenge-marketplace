@@ -8,13 +8,12 @@ import Logo from '../../assets/img/clarke-logo.svg';
 import Cover from '../../assets/icons/cover-login.svg';
 
 const Signin = () => {
-  const { authenticated, login } = useContext(AuthContext);
+  const { login } = useContext(AuthContext);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log('aqui', { email, password });
     login(email, password);
   };
 

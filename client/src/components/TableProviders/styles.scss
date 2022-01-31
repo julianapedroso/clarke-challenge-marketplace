@@ -5,6 +5,10 @@
     border-top: 1px solid $border-color;
     @include table-grid;
 
+    &:hover {
+      background-color: $contrast-color;
+    }
+
     td {
       display: flex;
       align-items: center;
