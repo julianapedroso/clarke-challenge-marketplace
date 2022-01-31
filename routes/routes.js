@@ -174,7 +174,7 @@ router.post('/providers', async (req, res) => {
 });
 
 // READ
-router.get('/providers', checkToken, async (req, res) => {
+router.get('/providers', async (req, res) => {
   try {
     const providers = await Provider.find();
     res.status(200).json({
