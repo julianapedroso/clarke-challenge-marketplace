@@ -99,7 +99,7 @@
         transition: all .1s linear;
       }
 
-      .label__float input:required:invalid + label {
+      .label__float input:required:invalid+label {
         color: $invalid-input-color;
       }
 
@@ -107,12 +107,12 @@
         border: 2px solid $invalid-input-color;
       }
 
-      .label__float input:required:invalid + label:before {
+      .label__float input:required:invalid+label:before {
         content: '*';
       }
 
-      .label__float input:focus + label,
-      .label__float input:not(:placeholder-shown) + label {
+      .label__float input:focus+label,
+      .label__float input:not(:placeholder-shown)+label {
         font-size: 13px;
         top: 0;
         color: $primary-color;
@@ -120,21 +120,6 @@
 
       button {
         @include input-container;
-      }
-    }
-
-    .btn__signup {
-      background-color: $primary-color;
-      color: $secondary-color;
-      border: none;
-      font-size: 1rem;
-      font-weight: bold;
-      margin-top: 1rem;
-      text-transform: uppercase;
-      cursor: pointer;
-
-      &:hover {
-        @include btn-hover;
       }
     }
 
@@ -147,6 +132,22 @@
         color: $text-color;
         text-decoration: underline;
         transition: all ease 0.3s;
+      }
+    }
+
+    .btn__signup {
+      background-color: $primary-color;
+      color: $secondary-color;
+      border: none;
+      font-size: 1rem;
+      font-weight: bold;
+      margin-top: 1rem;
+      text-transform: uppercase;
+      width: 100%;
+      cursor: pointer;
+
+      &:hover {
+        @include btn-hover;
       }
     }
   }

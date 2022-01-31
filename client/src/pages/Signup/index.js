@@ -27,22 +27,24 @@ const Signup = () => {
           <p className="section__signup-description">
             Não possui uma conta? Cadastre-se agora
           </p>
-          <div className="label__float">
-            <input type="text" placeholder=" " />
-            <label>Nome*</label>
-          </div>
-          <div className="label__float">
-            <input type="email" placeholder=" " />
-            <label>E-mail*</label>
-          </div>
-          <div className="label__float">
-            <input type="password" placeholder=" " />
-            <label>Senha*</label>
-          </div>
-          <button className="btn__signup">Cadastrar</button>
-          <Link to={'/signin'}>
-            <p>Já possui uma conta?</p>
-          </Link>
+          <form className="section__form">
+            <div className="label__float">
+              <input type="text" name="name" id="name" placeholder=" "/>
+              <label>Nome*</label>
+            </div>
+            <div className="label__float">
+              <input type="email" name="email" id="email" placeholder=" " />
+              <label>E-mail*</label>
+            </div>
+            <div className="label__float">
+              <input type="password" name="password" id="password" placeholder=" " />
+              <label>Senha*</label>
+            </div>
+            <button className="btn__signup" type="submit">Cadastrar</button>
+          </form>
+            <Link to={'/signin'}>
+              <p>Já possui uma conta?</p>
+            </Link>
         </article>
       </section>
     </section>
