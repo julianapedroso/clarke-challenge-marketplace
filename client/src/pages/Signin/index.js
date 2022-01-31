@@ -39,7 +39,6 @@ const Signin = () => {
           <p className="section__signin-description">
             Preencha seus dados para entrar
           </p>
-          <p>{String(authenticated)}</p>
           <form className="section__form" onSubmit={handleSubmit}>
             <div className="label__float">
               <input
