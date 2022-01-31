@@ -33,7 +33,6 @@ const TableProviders = (props) => {
 };
 
 TableProviders.propTypes = {
-  id: PropTypes.string.isRequired,
   logo: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   homeState: PropTypes.string.isRequired,
