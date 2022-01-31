@@ -8,4 +8,14 @@
   padding-top: 2rem;
   padding-bottom: 2rem;
   height: 100%;
+
+  .btn__logout {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+
+    img {
+      max-width: 50%;
+    }
+  }
 }
