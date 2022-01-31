@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './styles.scss';
 // API
-import api from '../../services/api';
+import { getProviders } from '../../services/api';
 // Components
 import { Navbar, TableProviders } from '../../components';
 
@@ -14,7 +14,7 @@ const Home = () => {
 
   const getAllProviders = async () => {
     try {
-      const response = await api.get('/providers');
+      const response = await getProviders();
       setProviders(response.data.providers);
     } catch (error) {
       console.log(error);
