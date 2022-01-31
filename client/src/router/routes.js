@@ -12,7 +12,11 @@ import { AuthProvider, AuthContext } from '../context/auth';
 
 const Routes = () => {
   const Private = ({ children }) => {
-    const { authenticated } = useContext(AuthContext);
+    const { authenticated, loading } = useContext(AuthContext);
+
+    if (loading) {
+      return <p>carregando...</p>;
+    }
 
     if (!authenticated) {
       return <Navigate to="/signin" />;
