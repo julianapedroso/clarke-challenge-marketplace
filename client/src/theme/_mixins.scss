@@ -26,7 +26,7 @@
 
 @mixin table-grid {
   display: grid;
-  grid-template-columns: repeat(8, 2fr);
+  grid-template-columns: repeat(8, 1fr);
   place-content: center;
   column-gap: 3rem;
 }

@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 // Context
 import { AuthContext } from '../../context/auth';
 import './styles.scss';
@@ -15,7 +16,9 @@ const Navbar = () => {
 
   return (
     <header className="Navbar">
-      <img src={Logo} alt="Logo Clarke" />
+      <Link to={'/'}>
+        <img src={Logo} alt="Logo Clarke" />
+      </Link>
       <button className="btn__logout" onClick={handleLogout}>
         <img src={ILogout} alt="Logout icon" />
       </button>

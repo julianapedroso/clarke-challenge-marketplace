@@ -18,7 +18,7 @@ const Signin = () => {
   };
 
   return (
-    <section className="Signin">
+    <main className="Signin">
       <section className="section__cover">
         <article>
           <img src={Cover} alt="Electricity bill" />
@@ -70,7 +70,7 @@ const Signin = () => {
           </Link>
         </article>
       </section>
-    </section>
+    </main>
   );
 };
 

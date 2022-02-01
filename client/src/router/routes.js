@@ -15,7 +15,7 @@ const Routes = () => {
     const { authenticated, loading } = useContext(AuthContext);
 
     if (loading) {
-      return <p>carregando...</p>;
+      return <p>Carregando...</p>;
     }
 
     if (!authenticated) {
