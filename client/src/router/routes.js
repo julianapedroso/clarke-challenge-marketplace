@@ -6,7 +6,7 @@ import {
   Navigate,
 } from 'react-router-dom';
 // Components
-import { Home, Signup, Signin } from '../pages';
+import { Home, Signup, Signin, ProviderDetails } from '../pages';
 // Context
 import { AuthProvider, AuthContext } from '../context/auth';
 
@@ -43,6 +43,9 @@ const Routes = () => {
         </Router>
         <Router>
           <Route path="/signup" exact element={<Signup />} />
+        </Router>
+        <Router>
+          <Route path="/:_id" exact element={<ProviderDetails />} />
         </Router>
       </AuthProvider>
     </BrowserRouter>

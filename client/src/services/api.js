@@ -16,3 +16,7 @@ export const createClient = async (name, email, password) => {
 export const getProviders = async () => {
   return api.get('/providers');
 };
+
+export const getProviderById = async () => {
+  return api.get('/providers');
+};

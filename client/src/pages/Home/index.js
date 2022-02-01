@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import './styles.scss';
 // API
 import { getProviders } from '../../services/api';
@@ -73,15 +74,17 @@ const Home = () => {
                   } = provider;
                   return (
                     <div key={_id}>
-                      <TableProviders
-                        logo={logo}
-                        name={name}
-                        homeState={homeState}
-                        costKwh={costKwh}
-                        minKwhLimit={minKwhLimit}
-                        totalNumberCustomers={totalNumberCustomers}
-                        averageCustomerRating={averageCustomerRating}
-                      />
+                      <Link to={`/${_id}`}>
+                        <TableProviders
+                          logo={logo}
+                          name={name}
+                          homeState={homeState}
+                          costKwh={costKwh}
+                          minKwhLimit={minKwhLimit}
+                          totalNumberCustomers={totalNumberCustomers}
+                          averageCustomerRating={averageCustomerRating}
+                        />
+                      </Link>
                     </div>
                   );
                 })}
