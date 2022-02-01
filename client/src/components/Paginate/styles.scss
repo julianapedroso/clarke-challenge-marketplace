@@ -1,0 +1,17 @@
+@import "../../theme/_mixins.scss";
+
+.Pagination {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  padding-top: 4%;
+
+  .btn__page {
+    background-color: $secondary-color;
+    border: 1px solid $border-color;
+    border-radius: 5px;
+    font-weight: bold;
+    padding: 0.5rem 0.8rem;
+    cursor: pointer;
+  }
+}

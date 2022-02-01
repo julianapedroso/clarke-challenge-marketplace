@@ -4,11 +4,13 @@ import './styles.scss';
 // API
 import { getProviders } from '../../services/api';
 // Components
-import { Footer, Navbar, TableProviders } from '../../components';
+import { Footer, Navbar, Pagination, TableProviders } from '../../components';
 
 const Home = () => {
   const [providers, setProviders] = useState([]);
   const [inputValue, setInputValue] = useState('');
+  const [itemsPerPage] = useState(5);
+  const [currentPage, setCurrentPage] = useState(0);
 
   useEffect(() => {
     getAllProviders();
@@ -27,6 +29,12 @@ const Home = () => {
     setInputValue(event.target.value);
   };
 
+  // Pagination
+  const pages = Math.ceil(providers.length / itemsPerPage);
+  const startIndex = currentPage * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const currentItems = providers.slice(startIndex, endIndex);
+
   return (
     <>
       <Navbar />
@@ -35,7 +43,7 @@ const Home = () => {
           Encontre o melhor fornecedor de acordo com sua necessidade
         </h1>
         <p className="home__description">
-          Pesquise pela demanda mínima de kWh
+          Pesquise pela demanda mínima de kWh desejada
         </p>
         <section className="home__result-finded">
           <input
@@ -52,7 +60,7 @@ const Home = () => {
 
         <section className="home__providers">
           <h2 className="home__providers-title">Fornecedores</h2>
-          <p>Gerencie suas fornecedores</p>
+          <p>Gerencie seus fornecedores</p>
           <article className="table__providers">
             <table>
               <thead>
@@ -68,37 +76,43 @@ const Home = () => {
                 </tr>
               </thead>
               <tbody>
-                {!!providers &&
-                  providers.filter((provider) => provider.minKwhLimit >= inputValue)
-                  .map((provider) => {
-                    const {
-                      _id,
-                      logo,
-                      name,
-                      homeState,
-                      costKwh,
-                      minKwhLimit,
-                      totalNumberCustomers,
-                      averageCustomerRating,
-                    } = provider;
-                    return (
-                      <div key={_id}>
-                        <Link to={`/${_id}`}>
-                          <TableProviders
-                            logo={logo}
-                            name={name}
-                            homeState={homeState}
-                            costKwh={costKwh}
-                            minKwhLimit={minKwhLimit}
-                            totalNumberCustomers={totalNumberCustomers}
-                            averageCustomerRating={averageCustomerRating}
-                          />
-                        </Link>
-                      </div>
-                    );
-                  })}
+                {!!currentItems &&
+                  currentItems
+                    .filter((provider) => provider.minKwhLimit >= inputValue)
+                    .map((provider) => {
+                      const {
+                        _id,
+                        logo,
+                        name,
+                        homeState,
+                        costKwh,
+                        minKwhLimit,
+                        totalNumberCustomers,
+                        averageCustomerRating,
+                      } = provider;
+                      return (
+                        <div key={_id}>
+                          <Link to={`/${_id}`}>
+                            <TableProviders
+                              logo={logo}
+                              name={name}
+                              homeState={homeState}
+                              costKwh={costKwh}
+                              minKwhLimit={minKwhLimit}
+                              totalNumberCustomers={totalNumberCustomers}
+                              averageCustomerRating={averageCustomerRating}
+                            />
+                          </Link>
+                        </div>
+                      );
+                    })}
               </tbody>
             </table>
+            <Pagination
+              pages={pages}
+              currentPage={currentPage}
+              setCurrentPage={setCurrentPage}
+            />
           </article>
         </section>
       </main>
