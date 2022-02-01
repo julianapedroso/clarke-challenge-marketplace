@@ -22,8 +22,21 @@ body {
   color: $text-color;
 }
 
-// svg {
-//   & > rect {
-//     fill: var(--color-primary);
-//   }
-// }
+body::-webkit-scrollbar {
+  width: 11px;
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--background-footer);
+}
+
+body::-webkit-scrollbar-thumb {
+  background: linear-gradient(264.26deg, $primary-color 0%, $text-color 101.03%);
+  border-radius: 20px;
+}
+
+svg {
+  & > rect {
+    fill: var(--color-primary);
+  }
+}
