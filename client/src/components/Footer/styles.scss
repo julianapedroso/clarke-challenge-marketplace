@@ -1,0 +1,30 @@
+@import "../../theme/_mixins.scss";
+
+.Footer {
+  background-color: $bg-footer-color;
+  display: flex;
+  justify-content: center;
+  height: auto;
+  width: 100%;
+  padding: 2%;
+  flex-shrink: 0;
+  margin-top: 4rem;
+
+  .footer__info {
+    text-align: center;
+
+    & > p {
+      color: $secondary-color;
+
+      & > a {
+        text-decoration: none;
+        color: $primary-color;
+        font-weight: bold;
+      }
+    }
+
+    p:last-child {
+      padding-top: 1%;
+    }
+  }
+}

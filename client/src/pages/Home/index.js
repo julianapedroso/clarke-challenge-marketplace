@@ -4,7 +4,7 @@ import './styles.scss';
 // API
 import { getProviders } from '../../services/api';
 // Components
-import { Navbar, TableProviders } from '../../components';
+import { Footer, Navbar, TableProviders } from '../../components';
 
 const Home = () => {
   const [providers, setProviders] = useState([]);
@@ -102,6 +102,7 @@ const Home = () => {
           </article>
         </section>
       </main>
+      <Footer />
     </>
   );
 };
