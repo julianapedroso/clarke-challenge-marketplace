@@ -92,7 +92,7 @@ const Home = () => {
                       } = provider;
                       return (
                         <div key={_id}>
-                          <Link to={`/${_id}`}>
+                          <Link to={`/providers/${_id}`}>
                             <TableProviders
                               logo={logo}
                               name={name}

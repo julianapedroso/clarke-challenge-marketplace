@@ -45,7 +45,7 @@ const Routes = () => {
           <Route path="/signup" exact element={<Signup />} />
         </Router>
         <Router>
-          <Route path="/:_id" exact element={<ProviderDetails />} />
+          <Route path="/providers/:_id" exact element={<ProviderDetails />} />
         </Router>
       </AuthProvider>
     </BrowserRouter>
