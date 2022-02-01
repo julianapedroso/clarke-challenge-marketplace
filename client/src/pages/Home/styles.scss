@@ -12,14 +12,14 @@
 
   .home__result-finded {
     display: flex;
-    gap: 1.5rem;
     padding: 2rem 0;
 
     .home__input-kwh {
       padding: 1rem;
-      border-radius: 5px;
+      border-radius: 5px 0 0 5px;
       border: 1px solid $border-color;
-      width: 15%;
+      max-width: 15%;
+      width: 13%;
 
       &:focus {
         @include input-focus;
@@ -29,16 +29,11 @@
     .btn__find-provider {
       background-color: $primary-color;
       color: $secondary-color;
-      border-radius: 5px;
+      border-radius: 0 5px 5px 0;
       border: none;
       font-weight: bold;
       text-transform: uppercase;
       padding: 1rem;
-      cursor: pointer;
-
-      &:hover {
-        @include btn-hover;
-      }
     }
   }
 

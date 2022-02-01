@@ -8,6 +8,7 @@ import { Navbar, TableProviders } from '../../components';
 
 const Home = () => {
   const [providers, setProviders] = useState([]);
+  const [inputValue, setInputValue] = useState('');
 
   useEffect(() => {
     getAllProviders();
@@ -22,6 +23,10 @@ const Home = () => {
     }
   };
 
+  const onChangeInputValue = (event) => {
+    setInputValue(event.target.value);
+  };
+
   return (
     <>
       <Navbar />
@@ -30,15 +35,17 @@ const Home = () => {
           Encontre o melhor fornecedor de acordo com sua necessidade
         </h1>
         <p className="home__description">
-          Pesquise pela sua demanda de kWh mensal
+          Pesquise pela demanda mínima de kWh
         </p>
         <section className="home__result-finded">
           <input
             className="home__input-kwh"
             type="number"
             min={0}
-            max={1000}
+            max={100}
             placeholder="Demanda de kWh"
+            value={inputValue}
+            onChange={onChangeInputValue}
           />
           <button className="btn__find-provider">Encontrar fornecedor</button>
         </section>
@@ -61,33 +68,35 @@ const Home = () => {
                 </tr>
               </thead>
               <tbody>
-                {providers.map((provider) => {
-                  const {
-                    _id,
-                    logo,
-                    name,
-                    homeState,
-                    costKwh,
-                    minKwhLimit,
-                    totalNumberCustomers,
-                    averageCustomerRating,
-                  } = provider;
-                  return (
-                    <div key={_id}>
-                      <Link to={`/${_id}`}>
-                        <TableProviders
-                          logo={logo}
-                          name={name}
-                          homeState={homeState}
-                          costKwh={costKwh}
-                          minKwhLimit={minKwhLimit}
-                          totalNumberCustomers={totalNumberCustomers}
-                          averageCustomerRating={averageCustomerRating}
-                        />
-                      </Link>
-                    </div>
-                  );
-                })}
+                {!!providers &&
+                  providers.filter((provider) => provider.minKwhLimit >= inputValue)
+                  .map((provider) => {
+                    const {
+                      _id,
+                      logo,
+                      name,
+                      homeState,
+                      costKwh,
+                      minKwhLimit,
+                      totalNumberCustomers,
+                      averageCustomerRating,
+                    } = provider;
+                    return (
+                      <div key={_id}>
+                        <Link to={`/${_id}`}>
+                          <TableProviders
+                            logo={logo}
+                            name={name}
+                            homeState={homeState}
+                            costKwh={costKwh}
+                            minKwhLimit={minKwhLimit}
+                            totalNumberCustomers={totalNumberCustomers}
+                            averageCustomerRating={averageCustomerRating}
+                          />
+                        </Link>
+                      </div>
+                    );
+                  })}
               </tbody>
             </table>
           </article>
