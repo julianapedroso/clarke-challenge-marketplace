@@ -5,6 +5,22 @@
     border-top: 1px solid $border-color;
     @include table-grid;
 
+    @include laptop {
+      grid-template-columns: .1fr 1.9fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+
+    @include tablet-landscape {
+      grid-template-columns: .1fr 1.9fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+
+    @include tablet-portrait {
+      grid-template-columns: .1fr 1.9fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+
+    @include phone-only {
+      grid-template-columns: .1fr 1.9fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+
     &:hover {
       background-color: $contrast-color;
       font-weight: bold;
@@ -13,11 +29,48 @@
     td {
       display: flex;
       align-items: center;
+
+      img {
+        @include tablet-landscape {
+          width: 300%;
+          padding-right: 1.5rem;
+        }
+
+        @include tablet-portrait {
+          width: 300%;
+          padding-right: 1.5rem;
+        }
+
+        @include phone-only {
+          width: 700%;
+          padding-right: 1.5rem;
+        }
+      }
     }
 
     .table__row {
       text-align: left;
       padding: 1.5rem 1rem 1.5rem 0;
+
+      @include laptop {
+        font-size: .81rem;
+        padding: .7rem .1rem .7rem 0;
+      }
+
+      @include tablet-landscape {
+        font-size: .81rem;
+        padding: .7rem .1rem .7rem 0;
+      }
+
+      @include tablet-portrait {
+        font-size: .81rem;
+        padding: .7rem .1rem .7rem 0;
+      }
+
+      @include phone-only {
+        font-size: .8rem;
+        padding: .7rem .1rem .7rem 0;
+      }
     }
   }
 

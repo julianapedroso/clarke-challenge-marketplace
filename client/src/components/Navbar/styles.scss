@@ -9,6 +9,32 @@
   padding-bottom: 2rem;
   height: 100%;
 
+  .navbar__logo {
+    @include phone-only {
+      max-width: 80%;
+    }
+  }
+
+  @include desktop {
+    padding: 4% 3% 4% 5%;
+  }
+
+  @include laptop {
+    padding: 4% 3% 4% 5%;
+  }
+
+  @include tablet-landscape {
+    padding: 5% 4% 5% 7%;
+  }
+
+  @include tablet-portrait {
+    padding: 5% 3% 5% 7%;
+  }
+
+  @include phone-only {
+    padding: 10% 1% 10% 8%;
+  }
+
   .btn__logout {
     border: none;
     background-color: transparent;
@@ -16,6 +42,10 @@
 
     img {
       max-width: 50%;
+
+      @include phone-only {
+        width: 45%;
+      }
     }
   }
 }

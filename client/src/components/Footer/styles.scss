@@ -9,16 +9,29 @@
   padding: 2%;
   flex-shrink: 0;
 
+  @include phone-only {
+    height: 10vh;
+    align-items: center;
+  }
+
   .footer__info {
     text-align: center;
 
-    & > p {
+    &>p {
       color: $secondary-color;
+
+      @include phone-only {
+        font-size: clamp(.5rem, .4rem + .5rem, .9rem);
+      }
 
       & > a {
         text-decoration: none;
         color: $primary-color;
         font-weight: bold;
+
+        @include phone-only {
+          font-size: clamp(.5rem, .4rem + .5rem, .9rem);
+        }
       }
     }
 

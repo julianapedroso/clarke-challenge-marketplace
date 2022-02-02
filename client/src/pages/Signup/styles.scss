@@ -25,6 +25,18 @@
       }
     }
 
+    @include tablet-landscape {
+      display: none;
+    }
+
+    @include tablet-portrait {
+      display: none;
+    }
+
+    @include phone-only {
+      display: none;
+    }
+
     .section__cover-title,
     .section__cover-description {
       color: $secondary-color;
@@ -32,6 +44,10 @@
       &.section__cover-title {
         font-size: 2rem;
         padding: 2rem 0;
+
+        @include laptop {
+          text-align: center;
+        }
       }
 
       &.section__cover-description {
@@ -48,16 +64,44 @@
     img {
       padding: 3rem;
       max-width: 100%;
+
+      @include tablet-landscape {
+        padding: 8% 8% 2% 8%;
+      }
+
+      @include tablet-portrait {
+        padding: 8% 8% 2% 8%;
+      }
+
+      @include phone-only {
+        padding: 8% 8% 2% 8%;
+      }
     }
 
     .section__signup-title {
       font-size: 2.5rem;
       padding: 2rem 0 1rem 0;
+
+      @include tablet-portrait {
+        font-size: clamp(1.5rem, 1.5rem + .5rem, 2.2rem);
+      }
+
+      @include phone-only {
+        font-size: clamp(1rem, 1.2rem + .5rem, 1.8rem);
+      }
     }
 
     .section__signup-description {
       font-size: 1.1rem;
       padding-bottom: 2rem;
+
+      @include tablet-portrait {
+        font-size: clamp(.5rem, .6rem + .5rem, 1.5rem);
+      }
+
+      @include phone-only {
+        font-size: clamp(.5rem, .5rem + .5rem, 1.2rem);
+      }
     }
 
     article {
@@ -121,12 +165,40 @@
       button {
         @include input-container;
       }
+
+      @include laptop {
+        padding: 0 10%;
+        width: 100%;
+      }
+
+      @include tablet-landscape {
+        width: 90%;
+        padding: 15% 8%;
+      }
+
+      @include tablet-portrait {
+        width: 80%;
+        padding: 15% 8%;
+      }
+
+      @include phone-only {
+        width: 100%;
+        padding: 10% 8%;
+      }
     }
 
     a {
       color: $primary-color;
       text-decoration: none;
       padding: 3rem 0;
+
+      @include tablet-portrait {
+        font-size: clamp(.5rem, 0.5rem + .5rem, 1.1rem);
+      }
+
+      @include phone-only {
+        font-size: clamp(.5rem, .4rem + .5rem, 1rem);
+      }
 
       &:hover {
         color: $text-color;
@@ -149,6 +221,18 @@
       &:hover {
         @include btn-hover;
       }
+    }
+
+    @include tablet-landscape {
+      width: 100%;
+    }
+
+    @include tablet-portrait {
+      width: 100%;
+    }
+
+    @include phone-only {
+      width: 100%;
     }
   }
 }

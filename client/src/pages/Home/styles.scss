@@ -6,7 +6,33 @@
   padding-top: 2rem;
   padding-bottom: 2rem;
 
-  & > p {
+  @include desktop {
+    padding: 0 5%;
+  }
+
+  @include tablet-landscape {
+    padding: 0 8%;
+  }
+
+  @include tablet-portrait {
+    padding: 0 8%;
+  }
+
+  @include phone-only {
+    padding: 0 6%;
+  }
+
+  .home__title {
+    @include tablet-portrait {
+      font-size: clamp(.5rem, 1.2rem + .5rem, 1.9rem);
+    }
+
+    @include phone-only {
+      font-size: clamp(.5rem, 1rem + .5rem, 1.7rem);
+    }
+  }
+
+  &>p {
     padding-top: 1rem;
   }
 
@@ -18,11 +44,31 @@
       padding: 1rem;
       border-radius: 5px 0 0 5px;
       border: 1px solid $border-color;
-      max-width: 15%;
+      max-width: 50%;
       width: 13%;
 
       &:focus {
         @include input-focus;
+      }
+
+      @include desktop {
+        width: 15%;
+      }
+
+      @include laptop {
+        width: 20%;
+      }
+
+      @include tablet-landscape {
+        width: 25%;
+      }
+
+      @include tablet-portrait {
+        width: 30%;
+      }
+
+      @include phone-only {
+        width: 50%;
       }
     }
 
@@ -34,17 +80,66 @@
       font-weight: bold;
       text-transform: uppercase;
       padding: 1rem;
+
+      @include desktop {
+        font-size: .8rem;
+        width: 18%;
+      }
+
+      @include laptop {
+        font-size: .8rem;
+        width: 25%;
+      }
+
+      @include tablet-landscape {
+        font-size: .8rem;
+        width: 35%;
+      }
+
+      @include tablet-portrait {
+        font-size: .77rem;
+        width: 40%;
+      }
+
+      @include phone-only {
+        font-size: .7rem;
+        width: 50%;
+      }
     }
   }
 
   .home__providers {
     padding-top: 5rem;
 
-    .home__providers-title {
-      font-size: 2.5rem;
+    @include laptop {
+      padding-top: 2.5rem;
     }
 
-    & > p {
+    @include tablet-landscape {
+      padding-top: 2rem;
+    }
+
+    @include tablet-portrait {
+      padding-top: 1.5rem;
+    }
+
+    @include phone-only {
+      padding-top: 1rem;
+    }
+
+    .home__providers-title {
+      font-size: 2.5rem;
+
+      @include tablet-portrait {
+        font-size: clamp(.5rem, 1.6rem + .5rem, 2.2rem);
+      }
+
+      @include phone-only {
+        font-size: clamp(.5rem, 1.3rem + .5rem, 2rem);
+      }
+    }
+
+    &>p {
       padding-top: 1rem;
     }
   }
@@ -64,7 +159,27 @@
 
       .table__title-header {
         @include table-grid;
+
+        @include phone-only {
+          align-items: center;
+          padding-bottom: 0;
+        }
       }
+    }
+
+    @include tablet-landscape {
+      overflow-x: auto;
+      scroll-behavior: smooth;
+    }
+
+    @include tablet-portrait {
+      overflow-x: auto;
+      scroll-behavior: smooth;
+    }
+
+    @include phone-only {
+      overflow-x: auto;
+      scroll-behavior: smooth;
     }
   }
 

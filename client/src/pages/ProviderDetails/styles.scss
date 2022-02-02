@@ -7,15 +7,47 @@
   max-width: 100vw;
   padding-top: 4%;
 
+  @include tablet-landscape {
+    padding: 0 6%;
+  }
+
+  @include tablet-portrait {
+    padding: 0 6%;
+  }
+
+  @include phone-only {
+    padding: 0 4%;
+  }
+
   .details__section {
     background-color: $border-color;
     border-radius: 5px;
     height: auto;
-    width: 50vw;
+    width: 45%;
     padding: 2% 3%;
 
     img {
       padding-bottom: 4%;
+    }
+
+    @include desktop {
+      width: 60%;
+    }
+
+    @include laptop {
+      width: 60%;
+    }
+
+    @include tablet-landscape {
+      width: 90%;
+    }
+
+    @include tablet-portrait {
+      width: 100%;
+    }
+
+    @include phone-only {
+      width: 100%;
     }
 
     .section__info {
@@ -50,6 +82,7 @@
       }
 
       .table__title-header {
+        align-items: center;
         border-bottom: 1px solid $border-table-color;
         border-top: 1px solid $border-table-color;
         padding-top: 1rem;
@@ -57,6 +90,25 @@
 
       .table__content-row {
         padding-top: 1rem;
+
+        @include phone-only {
+          display: flex;
+          align-items: flex-end;
+          width: 100%;
+          flex-direction: column;
+          position: relative;
+        }
+      }
+
+      .table__row {
+        @include phone-only {
+          &:before {
+            content: attr(data-label);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+          }
+        }
       }
     }
 
@@ -73,6 +125,35 @@
       margin-top: 10%;
       height: auto;
       padding: 6%;
+
+
+      @include laptop {
+        font-size: 1rem;
+      }
+
+      @include tablet-landscape {
+        font-size: 1rem;
+      }
+
+      @include tablet-portrait {
+        font-size: 1rem;
+        gap: 1rem;
+        justify-content: space-between;
+        padding: 6% 4%;
+      }
+
+      @include phone-only {
+        font-size: 0.85rem;
+        gap: 1rem;
+        justify-content: space-between;
+        padding: 6% 3%;
+      }
+    }
+
+    @include phone-only {
+      thead {
+        display: none;
+      }
     }
   }
 
