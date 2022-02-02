@@ -81,7 +81,7 @@ As seguintes tecnologias foram usadas na construção do projeto:
 ![clarke-tablet](https://user-images.githubusercontent.com/68782453/152094970-8a59dfaa-0174-4ab0-a1d4-8483d1afedfc.gif)
 
 #### Desktop
-![clarke-desktop](https://user-images.githubusercontent.com/68782453/152095304-68a6dc58-5dea-4659-9434-aa28ce0feeea.gif)
+![clarke-desktop](https://user-images.githubusercontent.com/68782453/152176201-b0a9eba5-eabd-4622-94ac-8fe473bfc2bc.gif)
 ### Autora
 
 <table>
