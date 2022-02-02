@@ -1,70 +1,142 @@
-# Getting Started with Create React App
+# Clarke Energia Challenge | Marketplace ⚡
+#### Desafio Full Stack proposto pela empresa Clarke Energia para vaga de Desenvolvedor(a) Junior.
+<br />
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h2 align='center'>
+<img src="https://image.pitchbook.com/LvQESjOuhmpilIshY3fCm2uJ0DK1638455660190_200x200" width="25%" margin="2rem" alt="Logo Clarke"/>
+</h2>
 
-## Available Scripts
+<h4 align='center'>
+👉 Status: Concluído ✅👏
+</h4>
+<hr />
 
-In the project directory, you can run:
+### ☁️ Deploy:
 
-### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### ✨ Funcionamento:
+#### Back-End
+##### Auth
+- [x] Rotas:
+  - [x] POST - Signin
+  - [x] POST - Sinup 
+  - [x] GET - Auth by Id 
+- [x] Verificação de hash com bcrypt
+- [x] Autenticação com JWT
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+##### Produto
+- [x] Rotas
+  - [x] POST - Provider
+  - [x] GET - All Providers
+  - [x] GET - Providers by Id
+- [x] Cada forncedor foi criado com base em dados fictícios e receberam as seguintes informações:
+  - [x] Nome
+  - [x] Logo
+  - [x] Estado de origem
+  - [x] Custo por kWh
+  - [x] Limite mínimo de consumo
+  - [x] Número total de clientes
+  - [x] Avaliação média dos clientes
 
-### `yarn test`
+#### Front-End
+##### Auth
+- [x] Cadastrar cliente
+- [x] Logar no sistema
+- [x] Autenticação com JWT 
+- [x] Persistência de login com uso de LocalStorage
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+##### Produto
+- [x] Mostrar todos os fornecedores gerados a partir dos dados consumidos pela API
+- [x] Mostrar detalhes de cada fornecedor através do Id
+- [x] Filtrar forcenedor de acordo com a demanda desejada
+- [x] Escolher forcenedor de acordo com a demanda desejada
+- [x] Paginar fornecedores em listagem de 5 em 5
 
-### `yarn build`
+#### Bonus
+- [x] Responsividade
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 💻 Tecnologias:
+As seguintes tecnologias foram usadas na construção do projeto:
+#### Back-End
+- [NodeJS](https://nodejs.org/en/)
+- [Express](https://expressjs.com/)
+- [Dotenv](https://www.npmjs.com/package/dotenv)
+- [Mongoose](https://www.npmjs.com/package/mongoose)
+- [Bcrypt](https://www.npmjs.com/package/bcrypt)
+- [JsonWebToken](https://www.npmjs.com/package/jsonwebtoken)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### Banco
+- [MongoDB](https://www.mongodb.com/pt-br/1)
+#### Front-End
+- [React.js](https://pt-br.reactjs.org/)
+- [Axios](https://www.npmjs.com/package/axios)
+- [React Router Dom](https://www.npmjs.com/package/react-router-dom)
+- [Figma](https://www.figma.com)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 🎨 Layout:
+- [Sass](https://www.npmjs.com/package/sass)
 
-### `yarn eject`
+### 📂 Como instalar o projeto localmente:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+# Passo 1. Clone este repositório no terminal:
+$ git clone https://github.com/julianapedroso/clarke-challenge-marketplace.git
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Passo 2. Acesse a pasta do projeto:
+$ cd clarke-challenge-marketplace
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Passo 3. Na raiz do projeto, instale as dependências do Back-End:
+$ npm install 
+or
+yarn
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# * -- PARA O BACK-END -- *
 
-## Learn More
+# Passo 4. Crie um arquivo .env
+$ touch .env
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Passo 5. Configure as variáveis de ambiente
+PORT=8080
+DB_USER=seu-usuario
+DB_PASS=sua-senha
+SECRET=uma-string-secreta
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Passo 6. Utilize as variáveis de ambiente na url obtida através de uma conta no MongoDB Atlas (Databases -> Connect -> Connect your application)
 
-### Code Splitting
+# * -- PARA O FRONT-END -- *
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+# Passo 7. Acesse a pasta client:
+$ cd client
 
-### Analyzing the Bundle Size
+# Passo 8. Já dentro da pasta client, instale as dependências do Front-End:
+$ npm install 
+or
+yarn
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+# Passo 9. Retorne para a raiz do projeto e execute o sequinte comando para rodar back e front simultaneamente:
+$ npm run dev
+or
+yarn dev
 
-### Making a Progressive Web App
+# Passo 10. Abra: http://localhost:3000 no seu navegador para ver a aplicação ✨
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### 🖼 Projeto:
+#### Mobile
+![clarke-mobile](https://user-images.githubusercontent.com/68782453/152094657-edd51fc0-26f9-4362-b854-9871bcae51a1.gif)
 
-### Advanced Configuration
+#### Tablet
+![clarke-tablet](https://user-images.githubusercontent.com/68782453/152094970-8a59dfaa-0174-4ab0-a1d4-8483d1afedfc.gif)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+#### Desktop
+![clarke-desktop](https://user-images.githubusercontent.com/68782453/152095304-68a6dc58-5dea-4659-9434-aa28ce0feeea.gif)
+### Autora
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<table>
+  <tr>
+    </td>
+    <td align="center"><a href="https://www.linkedin.com/in/julianacristinapedroso/">
+    <img src="https://avatars.githubusercontent.com/u/68782453?v=4" width="100px" alt="Juliana's avatar"/>
+    <br />
+    <sub><b>Juliana Pedroso</b></sub></a> <a href="https://github.com/belatoledo">🌻</a></sub><br /></td>     
+</table>
