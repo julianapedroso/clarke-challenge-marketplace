@@ -34,3 +34,39 @@
 @mixin bg-linear-gradient {
   background: linear-gradient(360deg, #000 21.81%, $primary-color 100%);
 }
+
+@mixin phone-only {
+  @media (max-width: 599px) {
+    @content;
+  }
+}
+
+@mixin tablet-portrait {
+  @media (max-width: 600px) {
+    @content;
+  }
+}
+
+@mixin tablet-landscape {
+  @media (min-width: 601px) and (max-width: 900px) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (max-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (max-width: 1800px) {
+    @content;
+  }
+}
