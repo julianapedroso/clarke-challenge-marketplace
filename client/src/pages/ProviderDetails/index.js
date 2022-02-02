@@ -68,10 +68,18 @@ const ProviderDetails = () => {
                   </thead>
                   <tbody>
                     <tr className="table__content-row">
-                      <td className="table__row">R$ {costKwh}</td>
-                      <td className="table__row">{minKwhLimit}</td>
-                      <td className="table__row">{totalNumberCustomers}</td>
-                      <td className="table__row">{averageCustomerRating}/10</td>
+                      <td className="table__row" data-label="Custo kWh">
+                        R$ {costKwh}
+                      </td>
+                      <td className="table__row" data-label="Limite mínimo kWh">
+                        {minKwhLimit}
+                      </td>
+                      <td className="table__row" data-label="Total de clientes">
+                        {totalNumberCustomers}
+                      </td>
+                      <td className="table__row" data-label="Avaliação">
+                        {averageCustomerRating}/10
+                      </td>
                     </tr>
                   </tbody>
                 </table>

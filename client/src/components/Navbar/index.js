@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import './styles.scss';
 // Context
 import { AuthContext } from '../../context/auth';
-import './styles.scss';
 // Assets
 import Logo from '../../assets/img/clarke-logo.svg';
 import ILogout from '../../assets/icons/logout.svg';
@@ -17,7 +17,7 @@ const Navbar = () => {
   return (
     <header className="Navbar">
       <Link to={'/'}>
-        <img src={Logo} alt="Logo Clarke" />
+        <img className="navbar__logo" src={Logo} alt="Logo Clarke" />
       </Link>
       <button className="btn__logout" onClick={handleLogout}>
         <img src={ILogout} alt="Logout icon" />
