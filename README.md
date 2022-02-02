@@ -3,16 +3,13 @@
 <br />
 
 <h2 align='center'>
-<img src="https://image.pitchbook.com/LvQESjOuhmpilIshY3fCm2uJ0DK1638455660190_200x200" width="25%" margin="2rem" alt="Logo Clarke"/>
+<img src="https://image.pitchbook.com/LvQESjOuhmpilIshY3fCm2uJ0DK1638455660190_200x200" width="20%" alt="Logo Clarke"/>
 </h2>
 
 <h4 align='center'>
 👉 Status: Concluído ✅👏
 </h4>
 <hr />
-
-### ☁️ Deploy:
-
 
 ### ✨ Funcionamento:
 #### Back-End
@@ -75,51 +72,6 @@ As seguintes tecnologias foram usadas na construção do projeto:
 
 ### 🎨 Layout:
 - [Sass](https://www.npmjs.com/package/sass)
-
-### 📂 Como instalar o projeto localmente:
-
-```bash
-# Passo 1. Clone este repositório no terminal:
-$ git clone https://github.com/julianapedroso/clarke-challenge-marketplace.git
-
-# Passo 2. Acesse a pasta do projeto:
-$ cd clarke-challenge-marketplace
-
-# Passo 3. Na raiz do projeto, instale as dependências do Back-End:
-$ npm install 
-or
-yarn
-
-# * -- PARA O BACK-END -- *
-
-# Passo 4. Crie um arquivo .env
-$ touch .env
-
-# Passo 5. Configure as variáveis de ambiente
-PORT=8080
-DB_USER=seu-usuario
-DB_PASS=sua-senha
-SECRET=uma-string-secreta
-
-# Passo 6. Utilize as variáveis de ambiente na url obtida através de uma conta no MongoDB Atlas (Databases -> Connect -> Connect your application)
-
-# * -- PARA O FRONT-END -- *
-
-# Passo 7. Acesse a pasta client:
-$ cd client
-
-# Passo 8. Já dentro da pasta client, instale as dependências do Front-End:
-$ npm install 
-or
-yarn
-
-# Passo 9. Retorne para a raiz do projeto e execute o sequinte comando para rodar back e front simultaneamente:
-$ npm run dev
-or
-yarn dev
-
-# Passo 10. Abra: http://localhost:3000 no seu navegador para ver a aplicação ✨
-```
 
 ### 🖼 Projeto:
 #### Mobile
