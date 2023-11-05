@@ -3,7 +3,7 @@
 <br />
 
 <h2 align='center'>
-<img src="https://image.pitchbook.com/LvQESjOuhmpilIshY3fCm2uJ0DK1638455660190_200x200" width="20%" alt="Logo Clarke"/>
+<img src="https://images.crunchbase.com/image/upload/c_lpad,f_auto,q_auto:eco,dpr_1/qitlanrinbwjzrjbumgd" width="20%" alt="Logo Clarke"/>
 </h2>
 
 <h4 align='center'>
